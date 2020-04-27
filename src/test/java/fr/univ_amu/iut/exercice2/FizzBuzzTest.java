@@ -53,6 +53,13 @@ public class FizzBuzzTest {
 
     @Disabled
     @Test
+    public void test_computeString_Should_Return_Fizz_when_9() {
+        String resultat = fizzBuzz.computeString(9);
+        assertEquals("Fizz", resultat);
+    }
+
+    @Disabled
+    @Test
     public void test_computeString_Should_Return_Buzz_when_10() {
         String resultat = fizzBuzz.computeString(10);
         assertEquals("Buzz", resultat);
