@@ -37,6 +37,8 @@ les conditions d'utilisation et choisir un nom d'utilisateur et un mot de passe.
 informations dans un coin identifié de votre cerveau car c'est grâce à elle que vous pourrez importer votre licence 
 sur d'autres produits JetBrains.
 
+Ce qui suit correspond à une utilisation sous Linux principalement, mais est facilement transposable pour les installations Mac OS X et Windows 10.
+
 #### Création de votre fork du TP1
 
 Vous connaissez déjà les bases de Git. Si ce n'est pas le cas, il vous faudra réaliser le [TP Git](https://github.com/IUTInfoAix-M2103/tp1) ! 
@@ -53,7 +55,7 @@ votre taux d'accomplissement du TP.
 
 #### Lancement de l'IDE
 
-Allez dans le Menu 'Application' puis 'Programmation' et ouvrir 'IntelliJ IDEA Ultimate Edition'.
+Allez dans le Menu 'Application' puis 'Programmation' et ouvrir 'IntelliJ IDEA Ultimate Edition'. Acceptez la licence et faites votre choix concernant la transmission de données d'utilisation.
 
 <!--
 Après le chargement, vous devriez tomber sur une première fenêtre vous proposant d'importer vos paramètres.
@@ -117,7 +119,7 @@ la fenêtre de connexion à GitHub.
 
 ![](src/main/resources/assets/login_to_github1.png)
 
-Renseignez votre nom d'utilisateur GitHub et son mot de passe. Cela va générer un token sur votre compte GitHub qui vous authentifiera désormais sur GitHub depuis IntelliJ IDEA. Vous recevrez probablement un mail de la part de GitHub pour vous en informer.
+Renseignez votre nom d'utilisateur GitHub et votre mot de passe. Cela va générer un token sur votre compte GitHub qui vous authentifiera désormais sur GitHub depuis IntelliJ IDEA. Vous recevrez probablement un mail de la part de GitHub pour vous en informer.
 
 ![](src/main/resources/assets/login_to_github2.png)
 
@@ -231,7 +233,7 @@ public class App
 
 On retrouve :
 
-- l'instruction `package`indiquant à quel package appartient la classe
+- l'instruction `package` indiquant à quel package appartient la classe
 
 - l'instruction `public class App` commençant la définition de la classe. Notez que le fichier qui la contient doit avoir le même nom, avec l'extension `.java` ;
 
@@ -271,7 +273,7 @@ Il se peut que tout ne se déroule pas comme prévu et que vous ne parveniez pas
 
 Si le triangle vert n'apparaît pas sur le nom de cette classe, il se peut que le projet n'ait pas été correctement importé comme un projet maven (un outil de gestion du cycle de vie d'une application). Dans ce cas faire un clic droit sur le fichier `pom.xml` puis sélectionner 'Maven' puis 'Reimport' (ou 'Import as a maven project').
 
-Si ça ne règle pas le problème, il se peut que IDEA ne trouve pas le JDK (SDK), ce qui ne devrait pas être le cas de la VM fournie. Aller dans le menu 'File' puis 'Project Structure' et :
+Si ça ne règle pas le problème, il se peut que IDEA ne trouve pas le JDK (SDK) si l'installation n'a pas été correctement réalisée. Aller dans le menu 'File' puis 'Project Structure' et :
   - dans la partie 'Project SDK' de 'Project Settings', vérifiez que vous utilisez une version de développement java version 11 ou supérieure (le niveau de language est au minimum 8, mais 11 est aussi un bon choix)
   ![](src/main/resources/assets/define_project_settings.png)
 
@@ -289,13 +291,13 @@ vous êtes en capacité de travailler sur vos exercices.
 
 Ce TP est conçu pour vous faire découvrir le **Test Driven Development (TDD)**, c'est à dire le développement conduit par les tests.
 
-Le TDD est une méthode de conception émergente c'est-à-dire que la conception apparaît au fur et à mesure du 
+Le TDD est une méthode de conception émergente selon laquelle la conception apparaît au fur et à mesure du 
 développement en encourageant une meilleure compréhension du problème **en commençant à écrire les tests avant le code 
 applicatif**. Pour le développeur, les tests vont constituer une spécification technique exécutable et vérifiable à tout 
 moment. Ainsi en rajoutant des tests, le développeur converge progressivement à la fois vers une spécification plus fine 
 et un code fonctionnel associé.
 
-Le workflow du TDD est souvent décrit par le triptyque "RED, GREEN, REFACTOR" (figure empruntée au site [ministryoftesting](https://www.ministryoftesting.com) :
+Le workflow du TDD est souvent décrit par le triptyque "RED, GREEN, REFACTOR" (figure empruntée au site [ministryoftesting](https://www.ministryoftesting.com)) :
 
 ![](src/main/resources/assets/graphic_tdd.png)
 
@@ -308,25 +310,25 @@ donnés pour vous faire découvrir cette méthode sans trop de douleur.
 
 Avant de vous présenter plus précisément ce que vous devez réaliser dans le contexte du TDD, commençons par exécuter un premier test, presqu'aussi inutile que notre classe `App` car il est censé ne jamais échouer, mais nous permettant de vérifier que les tests aussi sont fonctionnels.
 
-Ouvrez le fichier `AppTest.java`, présent dans `src/test/java/fr/univ_amu/iut` de notre classe témoin :
+Ouvrez le fichier `AppTest.java`, présent dans `src/test/java/fr/univ_amu/iut` :
 
 ![](src/main/resources/assets/app_test.png)
 
 Il contient un seul test `testApp()` qui s'assure que `true` est toujours vrai...
-La classe AppTest devrait être reconnue comme une classe de tests unitaires et apparaître avec l'icône ![Icône classe de test](src/main/resources/assets/idea_test_class.png) ajoutant un triangle rouge à celle des classes exécutables.
+La classe `AppTest` devrait être reconnue comme une classe de tests unitaires et apparaître avec l'icône ![Icône classe de test](src/main/resources/assets/idea_test_class.png) ajoutant un triangle rouge à celle des classes exécutables.
 
-Pour exécuter ce test, utiliser l'icône vert ![run test](src/main/resources/assets/idea_run_single_test.png) (ou comme ici  ![mark method test passed](src/main/resources/assets/idea_test_method_mark_passed.png) ou encore ![mark method test failed](src/main/resources/assets/idea_test_method_mark_failed.png), voir ci-après) dans la marge à gauche du code de la méthode, et sélectionner Run 'testApp()'. En bas de la fenêtre devrait s'afficher le résultat du test passé avec succès avec une marque verte ![test passed image](src/main/resources/assets/idea_test_passed.png) :
+Pour exécuter ce test, utiliser l'icône vert ![run test](src/main/resources/assets/idea_run_single_test.png) (ou comme ici  ![mark method test passed](src/main/resources/assets/idea_test_method_mark_passed.png) ou encore ![mark method test failed](src/main/resources/assets/idea_test_method_mark_failed.png), voir ci-après) dans la marge à gauche du code de la méthode, et sélectionner Run 'testApp()'. En bas de la fenêtre devrait s'afficher le résultat du test passé avec succès ayant une marque verte ![test passed image](src/main/resources/assets/idea_test_passed.png) :
 
 ![test passed](src/main/resources/assets/test_passed.png)
 
-Et dans la marge du code de la méthode `testApp()` l'icône devrait apparaître avec l'icône ![mark method test passed](src/main/resources/assets/idea_test_method_mark_passed.png).
+Et dans la marge du code de la méthode `testApp()` devrait apparaître l'icône ![mark method test passed](src/main/resources/assets/idea_test_method_mark_passed.png).
 
 Quand une classe de test possède plusieurs méthodes de test, on peut les exécuter tous en cliquant sur l'icône ![run test class image](src/main/resources/assets/idea_run_tests_class.png) puis en choisissant d'exécuter la classe entière.
 
 Si un test échoue, son résultat sera écrit en rouge avec le marqueur ![run test failed](src/main/resources/assets/idea_test_failed.png) et la marge du code de la méthode correspondante aura l'icône ![mark method test failed](src/main/resources/assets/idea_test_method_mark_failed.png). Un double clic sur le test vous ramènera sur son code.
 
 Certains tests peuvent être momentanément désactivés car leur méthode est préfixée de l'annotation `@Disabled`. Dans ce cas, le test est ignoré et apparaît avec la marque ![run test ignored](src/main/resources/assets/idea_test_ignored.png).
-Pour activer le test, il faut mette en commentaire l'annotation `@Disabled` ou la supprimer.
+Pour activer le test, il faut mettre en commentaire l'annotation `@Disabled` ou la supprimer.
 
 Enfin, quand il existe plusieurs classes de test regroupées comme ici dans l'arborescence `src/test/java`, il est possible de faire exécuter la totalité de tous les tests (non désactivés) en faisant un clic droit sur le dossier java ![run all tests start point](src/main/resources/assets/idea_run_all_tests.png) et en choisissant Run 'All Tests'...
 
@@ -347,8 +349,8 @@ le restructurer et l'améliorer sans en changer le comportement. Pendant cette �
 au vert. Ils jouent le rôle de filet de sécurité pour éviter l'introduction d'une régression dans le code. Quand tout 
 est terminé vous pouvez redémarrer le cycle avec un prochain test.
 
-À chaque fin de cycle, vous devez soumettre votre travail sur votre dépôt Git local et le pousser sur votre fork sur 
-GitHub. Vous terminez un exercice lorsque tous les tests y sont activés et passent sur votre dépôt distant.
+**À chaque fin de cycle, vous devez soumettre votre travail sur votre dépôt Git local et le pousser sur votre fork sur 
+GitHub. Vous terminez un exercice lorsque tous les tests y sont activés et passent sur votre dépôt distant.**
 
 IntelliJ IDEA vous permet de "commiter" votre code et de le "pousser" sur GitHub directement depuis l'IDE, sans passer par la ligne de commande, soit via la partie 'Git' de la barre d'outils, soit par le menu 'VCS' puis 'Git'. Généralement l'action 'commit' vous propose d'écrire le commentaire du *commit*, ainsi qu'une option 'Commit and Push...'.
 
@@ -356,7 +358,7 @@ IntelliJ IDEA vous permet de "commiter" votre code et de le "pousser" sur GitHub
 
 La méthode recommandée pour réaliser ces TP est de rester simplement sur IDEA pour exécuter, tester et versionner votre travail. Néanmoins, nous tenons à signaler que l'architecture de votre projet repose sur l'outil **maven** pour lequel a été défini le fichier `pom.xml` à la racine du projet, et qui a permis à IntelliJ IDEA de l'analyser correctement.
 
-Maven est un outil puissant permettant de gérer l'ensemble du cycle de vie d'une application : vérification, compilation, tests, packaging, installation, déploiement...
+Maven est un outil puissant permettant de gérer l'ensemble du cycle de vie d'une application : nettoyage, vérification, compilation, tests, packaging, installation, déploiement...
 
 Sans rentrer dans les détails, on peut exécuter la classe principale du TP via la ligne de commandes. La commande ci-dessous demande de nettoyer (`clean`) puis compiler le projet (`compile`), puis d'exécuter la classe principale (`exec:java`) :
 
@@ -460,7 +462,7 @@ un nouvel environnement.
 #### Les objectifs sont simples:
 - vous devez activer les tests un par un.
 - Commencez par le premier, il doit échouer, implémentez ensuite la fonction de façon à ce qu'elle retourne `null`. Faites à nouveau tourner le test, il doit échouer. Puis implémentez la fonction pour qu'elle retourne "Hello, World!". Faites à nouveau tourner le test, il doit réussir.
-- Vous recommencez ensuite cette étape pour chacun des tests suivants, mais chaque fois que vous modifiez quoi que soit dans la fonction `main`, vous n'oublierez pas de vérifier que tous les tests activés passent.
+- Vous recommencez ensuite cette étape pour chacun des tests suivants, mais chaque fois que vous modifiez quoi que soit dans la classe `HelloWorld`, vous n'oublierez pas de vérifier que tous les tests activés passent.
 - Poussez votre solution sur GitHub.
 - Si tout va bien, vous serez prêt à travailler enfin sur votre premier exercice réel.
 
@@ -468,13 +470,13 @@ Bien évidemment l'implémentation qui vous est demandée n'est pas canonique ma
 ce qui vous sera demandé dans la suite des exercices. N'oubliez pas le workflow et surtout de ne passer à l'exercice 
 suivant qu'après avoir activé tous les tests les uns après les autres.
 
-Une fois l'exercice terminé, n'oubliez pas de pousser vos modifications sur votre fork de la manière suivante : 
+Une fois l'exercice terminé, n'oubliez pas de pousser vos modifications sur votre fork, soit simplement depuis IDEA via la barre d'outils Git ou le menu VCS, ou en ligne de commandes de la manière suivante : 
 ```sh
-~/net-home/tpIHM/tp1-VotreUsername (master*)$ mvn test
-~/net-home/tpIHM/tp1-VotreUsername (master*)$ git add src/test/java/fr/univ_amu/iut/exercice1/HelloWorldTest.java
-~/net-home/tpIHM/tp1-VotreUsername (master*)$ git add src/main/java/fr/univ_amu/iut/exercice1/HelloWorld.java
-~/net-home/tpIHM/tp1-VotreUsername (master*)$ git commit -m "Validation du dernier test de l'exercice 1"
-~/net-home/tpIHM/tp1-VotreUsername (master)$ git push origin master
+~/.../tp1-VotreUsername (master*)$ mvn test
+~/.../tp1-VotreUsername (master*)$ git add src/test/java/fr/univ_amu/iut/exercice1/HelloWorldTest.java
+~/.../tp1-VotreUsername (master*)$ git add src/main/java/fr/univ_amu/iut/exercice1/HelloWorld.java
+~/.../tp1-VotreUsername (master*)$ git commit -m "Validation du dernier test de l'exercice 1"
+~/.../tp1-VotreUsername (master)$ git push origin master
 ```
 
 ### Exercice 2 : Fizz Buzz !
