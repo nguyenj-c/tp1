@@ -470,7 +470,7 @@ Bien évidemment l'implémentation qui vous est demandée n'est pas canonique ma
 ce qui vous sera demandé dans la suite des exercices. N'oubliez pas le workflow et surtout de ne passer à l'exercice 
 suivant qu'après avoir activé tous les tests les uns après les autres.
 
-Une fois l'exercice terminé, n'oubliez pas de pousser vos modifications sur votre fork, soit simplement depuis IDEA via la barre d'outils Git ou le menu VCS, ou en ligne de commandes de la manière suivante : 
+Une fois l'exercice terminé, n'oubliez pas de pousser vos modifications sur votre fork, soit simplement depuis IDEA via la barre d'outils Git ou le menu VCS, soit en ligne de commandes de la manière suivante : 
 ```sh
 ~/.../tp1-VotreUsername (master*)$ mvn test
 ~/.../tp1-VotreUsername (master*)$ git add src/test/java/fr/univ_amu/iut/exercice1/HelloWorldTest.java
