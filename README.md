@@ -505,8 +505,8 @@ Comme pour l'exercice précédent, vous devez activer les tests les uns après l
 chaque itération du cycle principal du workflow.
 
 Pas à pas :
-- activez le premier test qui appelle la méthode computeString avec la valeur 1 fournie en paramètre, implémentez la méthode avec une valeur de retour 0, testez : le test échoue (RED)
-- implémentez maintenant la méthode pour qu'elle retourne 1, testez : le test réussit (GREEN)
+- activez le premier test qui appelle la méthode computeString avec la valeur 1 fournie en paramètre, implémentez la méthode en retournant la chaîne "0", testez : le test échoue (RED)
+- implémentez maintenant la méthode pour qu'elle retourne la chaîne "1", testez : le test réussit (GREEN)
 - refaites les deux précédentes étapes avec le second test (RED puis GREEN)
 - à ce niveau votre implémentation doit contenir un if, et vous devez remarquer que les deux "return" font la même chose, vous pouvez donc améliorer votre code pour qu'il retourne la chaîne résultat d'une conversion. C'est le premier REFACTOR.
 - activez ensuite le test pour 3 (attention pas modulo 3), implémentez avec une valeur de retour fausse, puis une valeur de retour juste,
@@ -519,7 +519,7 @@ Pas à pas :
 - activez ensuite le test pour 10, implémentez avec une valeur de retour fausse, puis la valeur de retour juste,
 - activez ensuite le test pour 15, qui doit d'abord échouer (sans aucune intervention), et ensuite écrivez le code correct.
 - vérifiez pour 0.
-- pour l'implémentation de la seconde fonction, conservez le même principe : vous pouvez commentez les lignes 79 à 82 pour continuer à implémenter suivant ce principe incrémental. 
+- pour l'implémentation de la seconde fonction, conservez le même principe : vous pouvez commenter les lignes 79 à 82 pour continuer à implémenter suivant ce principe incrémental. 
 - le dernier test est uniquement un test de vérification, vous ne devriez rien avoir à implémenter de plus.
 
 
