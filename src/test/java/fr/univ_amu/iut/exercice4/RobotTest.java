@@ -34,7 +34,8 @@ public final class RobotTest {
         final GridPosition initialGridPosition = new GridPosition(0, 0);
         final Robot robot = new Robot(initialGridPosition, Orientation.NORTH);
         robot.turnRight();
-        assertEquals(initialGridPosition, robot.getGridPosition());
+        final GridPosition expectedPosition = new GridPosition(0, 0);
+        assertEquals(expectedPosition, robot.getGridPosition());
     }
 
     @Disabled
@@ -79,7 +80,8 @@ public final class RobotTest {
         final GridPosition initialGridPosition = new GridPosition(0, 0);
         final Robot robot = new Robot(initialGridPosition, Orientation.NORTH);
         robot.turnLeft();
-        assertEquals(initialGridPosition, robot.getGridPosition());
+        final GridPosition expectedPosition = new GridPosition(0, 0);
+        assertEquals(expectedPosition, robot.getGridPosition());
     }
 
     @Disabled
