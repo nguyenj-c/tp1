@@ -53,7 +53,7 @@ Vous apparaîtrez automatiquement comme contributeur de ce projet pour y pousser
 récupérera automatiquement votre code après chaque *push* pour vérifier que les tests passent et calculer en même temps 
 votre taux d'accomplissement du TP.
 
-#### Lancement de l'IDE
+#### <a name="parametrageIDEA"></a> Lancement et paramétrage de l'IDE
 
 Allez dans le Menu 'Application' puis 'Programmation' et ouvrir 'IntelliJ IDEA Ultimate Edition'. Acceptez la licence et faites votre choix concernant la transmission de données d'utilisation.
 
